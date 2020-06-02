@@ -32,6 +32,14 @@ import Layout from '@/layout'
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
+
+const files = require.context('./modules', false, /\.js$/)
+const modules = []
+
+files.keys().forEach(key => {
+  modules.push(files(key).default)
+})
+
 export const constantRoutes = [
   {
     path: '/redirect',
@@ -68,13 +76,6 @@ export const constantRoutes = [
     ]
   }
 ]
-
-const files = require.context('./modules', false, /\.js$/)
-const modules = []
-
-files.keys().forEach(key => {
-  modules.push(files(key).default)
-})
 
 export const asyncRoutes = [
   ...modules,

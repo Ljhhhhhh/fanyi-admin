@@ -20,7 +20,7 @@
 import SrmForm from '@/components/SrmForm'
 import { findItem } from '@/components/SrmForm/util'
 export default {
-  name: 'FormExample',
+  name: 'UserList',
   components: {
     SrmForm
   },
